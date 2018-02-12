@@ -15,7 +15,7 @@
     "transform",
     "node"
   ],
-  "author": "Ahmed Sorour",
+  "author": "Michael Bosworth",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/aserour/node-json-transform/issues"
