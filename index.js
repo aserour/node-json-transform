@@ -26,10 +26,12 @@ exports.DataTransform = function(data, map){
 			key = key || map.list;
 			if(key == '') {
 				value = '';
+			} else if(key.indexOf("=") === 0) {
+				value = key.replace("=",'');
 			} else {
 				keys = key.split('.');
 				for(var i = 0; i < keys.length; i++ ) {
-					if(typeof(value) !== "undefined" && 
+					if(typeof(value) !== "undefined" && typeof(value) !== "string" &&
 						keys[i] in value) {
 						value = value[keys[i]];
 					} else {
@@ -37,7 +39,7 @@ exports.DataTransform = function(data, map){
 					}
 				}
 			}
-			
+
 			return value;
 
 		},
@@ -54,8 +56,8 @@ exports.DataTransform = function(data, map){
 
 			if(key == '') {
 				return;
-			} 
-			
+			}
+
 			var keys = key.split('.');
 			var target = obj;
 			for(var i = 0; i < keys.length; i++ ) {
@@ -77,7 +79,7 @@ exports.DataTransform = function(data, map){
 
 			var value = this.getValue(data, map.list);
 			var normalized = {};
-					
+
 			if(value) {
 				var list = this.getList();
 				normalized = map.item ? _.map(list, _.bind(this.iterator, this, map.item)) : list;
@@ -85,7 +87,7 @@ exports.DataTransform = function(data, map){
 				normalized = this.each(normalized, context);
 				normalized = this.removeAll(normalized);
 			}
-			
+
 			return normalized;
 
 		},
@@ -129,7 +131,7 @@ exports.DataTransform = function(data, map){
 				_.each(data, function (value, index, collection) {
 					return map.each(value, index, collection, context);
 				});
-			}  
+			}
 			return data;
 		},
 
@@ -153,7 +155,7 @@ exports.DataTransform = function(data, map){
 				}
 				else {
 					obj[newkey] = "";
-				}	
+				}
 
 			}, this));
 			return obj;
