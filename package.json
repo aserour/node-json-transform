@@ -1,6 +1,6 @@
 {
   "name": "node-json-transform",
-  "version": "1.0.16",
+  "version": "1.1.0",
   "description": "A node module for transforming and performing operations on JSON.",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bozzltron/node-json-transform"
+    "url": "https://github.com/aserour/node-json-transform"
   },
   "keywords": [
     "json",
@@ -18,9 +18,9 @@
   "author": "Michael Bosworth",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bozzltron/node-json-transform/issues"
+    "url": "https://github.com/aserour/node-json-transform/issues"
   },
-  "homepage": "https://github.com/bozzltron/node-json-transform",
+  "homepage": "https://github.com/aserour/node-json-transform",
   "dependencies": {
     "lodash": "^4.17.4"
   },
